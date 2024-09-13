@@ -14,7 +14,7 @@
                 <input type="hidden" name="id" value="${categoria.id}" />
                 <br />
                 <a href="/categoria/list" class="btn btn-primary">Voltar</a>
-                <button type="submit" class=""btn btn-danger">Excluir</button>
+                <button type="submit" class="btn btn-danger">Excluir</button>
             </form>
         </div>
     </body>

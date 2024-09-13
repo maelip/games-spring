@@ -23,7 +23,7 @@
                             <td>${itm.nome}</td>
                             <td>
                                 <a href="/plataforma/update?id=${item.id}" class="btn btn-warning">Editar</a>
-                                <a href="/plataforma/update?id=${item.id}" class="btn btn-danger">Excluir</a>
+                                <a href="/plataforma/delete?id=${item.id}" class="btn btn-danger">Excluir</a>
                             </td>
                         </tr>
                     </c:forEach>
