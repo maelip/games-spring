@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotatin.RequestParam;
 import application.model.Categoria;
 import application.repository.CategoriaRepository;
 
-@controller
+@Controller
 @RequestMapping("/categoria")
 public class CategoriaController {
     @Autowiredprivate CategoriaRepository categoriaRepo;
@@ -20,7 +20,7 @@ public class CategoriaController {
     @RequestMapping("/list")
     public String list(Model ui) {
         ui.addAttribute("categorias", categoriaRepo.findAll());
-        return "categooria/list";
+        return "categoria/list";
     }
 
     @RequestMapping("/insert")
