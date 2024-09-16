@@ -20,7 +20,7 @@ import application.repository.PlataformaRepository;
 @Controller
 @RequestMapping("/jogo")
 public class JogoController {
-    @Autowiredprivate
+    @Autowired private
     JogoRepository jogoRepo;
     @Autowired
     private CategoriaRepository categoriaRepo;
@@ -34,21 +34,21 @@ public class JogoController {
     }
 
     @RequestMapping("/insert")
-    public String insert() {
+    public String insert(Model ui) {
         ui.addAttribute("categorias", categoriaRepo.findAll());
         ui.addAttribute("plataformas", plataformaRepo.findAll());
         return "jogo/insert";
     }
 
-    @RequestMapping(value = "/insert", method = ResquestMethod.POST)
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(
         @RequestParam("titulo") String titulo,
         @RequestParam("categoria") String idCategoria,
         @RequestParam("plataformas") long[] idsPlataformas) {
 
-        jogo jogo = new Jogo();
+        Jogo jogo = new Jogo();
         jogo.setTitulo(titulo);
-        jogo.setCategoria(categoriaRepo.finById(idCategoria).get());
+        jogo.setCategoria(categoriaRepo.findById(idCategoria).get());
         for(long p : idsPlataformas) {
             Optional<Plataforma> plataforma = plataformaRepo.findById(p);
             if(plataforma.isPresent()) {
@@ -56,7 +56,7 @@ public class JogoController {
             }
         }
         jogoRepo.save(jogo);
-        return "redirect:/jogo;list";
+        return "redirect:/jogo/list";
     }
 
     @RequestMapping("/update")
@@ -88,7 +88,7 @@ public class JogoController {
             jogo.get().setCategoria(categoriaRepo.findById(idCategoria).get());
             Set<Plataforma> updatePlataforma = new HashSet<>();
             for(long p : idsPlataformas) {
-                Opional<Plataforma> plataforma = plataformaRepo.finById(p);
+                Optional<Plataforma> plataforma = plataformaRepo.findById(p);
                 if(plataforma.isPresent()) {
                     updatePlataforma.add(plataforma.get());
                 }

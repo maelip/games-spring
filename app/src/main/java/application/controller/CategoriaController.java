@@ -15,7 +15,7 @@ import application.repository.CategoriaRepository;
 @Controller
 @RequestMapping("/categoria")
 public class CategoriaController {
-    @Autowiredprivate CategoriaRepository categoriaRepo;
+    @Autowired private CategoriaRepository categoriaRepo;
 
     @RequestMapping("/list")
     public String list(Model ui) {
@@ -28,7 +28,7 @@ public class CategoriaController {
         return "categoria/insert";
     }
 
-    @RequestMapping(value = "/insert", method = ResquestMethod.POST)
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(@RequestParam("nome") String nome) {
         Categoria categoria = new Categoria();
         categoria.setNome(nome);

@@ -15,7 +15,7 @@ import application.repository.PlataformaRepository;
 @Controller
 @RequestMapping("/plataforma")
 public class PlataformaController {
-    @Autowiredprivate
+    @Autowired private
     PlataformaRepository plataformaRepo;
 
     @RequestMapping("/list")
@@ -29,9 +29,9 @@ public class PlataformaController {
         return "plataforma/insert";
     }
 
-    @RequestMapping(value = "/insert", method = ResquestMethod.POST)
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(@RequestParam("nome") String nome) {
-        Pltaforma plataforma = new Categoria();
+        Plataforma plataforma = new Plataforma();
         plataforma.setNome(nome);
 
         plataformaRepo.save(plataforma);

@@ -44,7 +44,7 @@ public class Jogo {
     }
 
     public String getTitulo() {
-        return nome;
+        return titulo;
     }
 
     public void setTitulo(String titulo) {
