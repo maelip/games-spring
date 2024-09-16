@@ -44,7 +44,7 @@ public class PlataformaController {
         @RequestParam("id") long id,
         Model ui) {
         
-        Optional<Plataforma> plataforma = plataforma.Repo.findById(id);
+        Optional<Plataforma> plataforma = plataformaRepo.findById(id);
 
         if(plataforma.isPresent()) {
             ui.addAttribute("plataforma", plataforma.get());
@@ -59,7 +59,7 @@ public class PlataformaController {
         @RequestParam("id") long id,
         @RequestParam("nome") String nome ) {
 
-        Optional<Plataforma> plataformaRepo.findById(id);
+        Optional<Plataforma> plataforma = plataformaRepo.findById(id);
 
         if(plataforma.isPresent()) {
             plataforma.get().setNome(nome);
