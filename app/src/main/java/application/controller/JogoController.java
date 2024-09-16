@@ -20,8 +20,8 @@ import application.repository.PlataformaRepository;
 @Controller
 @RequestMapping("/jogo")
 public class JogoController {
-    @Autowired private
-    JogoRepository jogoRepo;
+    @Autowired
+    private JogoRepository jogoRepo;
     @Autowired
     private CategoriaRepository categoriaRepo;
     @Autowired
@@ -43,7 +43,7 @@ public class JogoController {
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String insert(
         @RequestParam("titulo") String titulo,
-        @RequestParam("categoria") String idCategoria,
+        @RequestParam("categoria") long idCategoria,
         @RequestParam("plataformas") long[] idsPlataformas) {
 
         Jogo jogo = new Jogo();

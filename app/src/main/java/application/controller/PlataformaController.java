@@ -36,7 +36,7 @@ public class PlataformaController {
 
         plataformaRepo.save(plataforma);
 
-        return "redirect:/plataforma;list";
+        return "redirect:/plataforma/list";
     }
 
     @RequestMapping("/update")

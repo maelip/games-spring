@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEnconding="UTF-8" %>
-<%@ taglib url="jakarta.tags.core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -10,7 +10,7 @@
     <body>
         <div class="container">
         <h1>Plataformas</h1>
-            <a href="/plataforma/insert" class="btn btin-primary"> Nova Plataforma</a>
+            <a href="/plataforma/insert" class="btn btn-primary"> Nova Plataforma</a>
             <table class="table">
                 <tr>
                         <th>Id</th>
@@ -20,7 +20,7 @@
                     <c:forEach var="item" items="${plataformas}">
                         <tr>
                             <td>${item.id}</td>
-                            <td>${itm.nome}</td>
+                            <td>${item.nome}</td>
                             <td>
                                 <a href="/plataforma/update?id=${item.id}" class="btn btn-warning">Editar</a>
                                 <a href="/plataforma/delete?id=${item.id}" class="btn btn-danger">Excluir</a>

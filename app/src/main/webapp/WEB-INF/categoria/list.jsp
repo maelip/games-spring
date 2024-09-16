@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEnconding="UTF-8" %>
-<%@ taglib url="jakarta.tags.core" prefix="c" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -10,7 +10,7 @@
     <body>
         <div class="container">
             <h1>Categorias</h1>
-                <a href="/categoria/insert" class="btn btin-primary"> Novo Categoria</a>
+                <a href="/categoria/insert" class="btn btn-primary"> Novo Categoria</a>
                 <table class="table">
                         <tr>
                             <th>Id</th>
@@ -20,7 +20,7 @@
                         <c:forEach var="item" items="${categorias}">
                             <tr>
                                 <td>${item.id}</td>
-                                <td>${itm.nome}</td>
+                                <td>${item.nome}</td>
                                 <td>
                                     <a href="/categoria/update?id=${item.id}" class="btn btn-warning">Editar</a>
                                     <a href="/categoria/delete?id=${item.id}" class="btn btn-danger">Excluir</a>

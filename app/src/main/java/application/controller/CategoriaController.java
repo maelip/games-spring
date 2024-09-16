@@ -35,7 +35,7 @@ public class CategoriaController {
 
         categoriaRepo.save(categoria);
 
-        return "redirect:/categoria;list";
+        return "redirect:/categoria/list";
     }
 
     @RequestMapping("/update")
