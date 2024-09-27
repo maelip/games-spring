@@ -4,237 +4,336 @@
     <head>
         <meta charset="UTF-8" />
         <title>Home</title>
-
+    
+      </head>
         <style>
-           :root {
-            --default: #00ffc3;
-            --hover: #efceff;
-            --size: 80px;
-            --distance: calc(var(--size) * -.8);
-            --spring-easing: linear(
-                0, 0.807 3.1%, 1.234 5.2%, 1.391, 1.505, 1.576 8.3%, 1.596, 1.607 9.4%, 1.608,
-                1.606 10.1%, 1.589, 1.557, 1.508 12.3%, 1.393 13.8%, 1.057 17.5%, 0.91 19.6%,
-                0.861, 0.825, 0.801, 0.788 23.4%, 0.787, 0.789, 0.797 25.3%, 0.81 26.1%,
-                0.849 27.6%, 0.969 31.5%, 1.02 33.3%, 1.042, 1.058, 1.068, 1.074 37.6% 38.9%,
-                1.067 40.3%, 1.053 41.9%, 1.011 45.7%, 0.993, 0.98, 0.974 51.7% 53.1%,
-                0.977 54.6%, 1.002 61.8%, 1.007, 1.009 65.7%, 1.008 68.9%, 0.999 75.9%,
-                0.997 79.8%, 1.001 92.7% 100%
-            );
-            --duration: 3s;
-            }
+        @charset "utf-8";
+        /******* Fonts Import Start **********/
+        @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+        /********* Fonts Face CSS End **********/
 
-            .goo,
-            .goo ul {
-            background: inherit;
-            filter: url("#schlurp"); // this is reference to svg filter in HTML.
-            }
+        /******* Common Element CSS Start ******/
+        * {
+          margin: 0px;
+          padding: 0px;
+        }
+        body {
+          font-family: "Roboto", sans-serif;
+          font-size: 16px;
+        }
+        .clear {
+          clear: both;
+        }
+        img {
+          max-width: 100%;
+          border: 0px;
+        }
+        ul,
+        ol {
+          list-style: none;
+        }
+        a {
+          text-decoration: none;
+          color: inherit;
+          outline: none;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+        }
+        a:focus,
+        a:active,
+        a:visited,
+        a:hover {
+          text-decoration: none;
+          outline: none;
+        }
+        a:hover {
+          color: #e73700;
+        }
+        h2 {
+          margin-bottom: 48px;
+          padding-bottom: 16px;
+          font-size: 20px;
+          line-height: 28px;
+          font-weight: 700;
+          position: relative;
+          text-transform: capitalize;
+        }
+        h3 {
+          margin: 0 0 10px;
+          font-size: 28px;
+          line-height: 36px;
+        }
+        button {
+          outline: none !important;
+        }
+        /******* Common Element CSS End *********/
 
-            ul {
-            display: flex;
-            justify-content: center;
-            background: inherit;
-            padding: 0 calc(var(--size) / 2);
-            li {
-                width: var(--size);
-                height: var(--size);
-                background: var(--default);
-                margin: 0 3px;
-                color: black;
-                position: relative;
-            }
-            }
+        /* -------- title style ------- */
+        .line-title {
+          position: relative;
+          width: 400px;
+        }
+        .line-title::before,
+        .line-title::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 4px;
+          border-radius: 2px;
+        }
+        .line-title::before {
+          width: 100%;
+          background: #f2f2f2;
+        }
+        .line-title::after {
+          width: 32px;
+          background: #e73700;
+        }
 
-            .goo ul li {
-            &:before {
-                content: "";
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                left: 0;
-                top: 0;
-                border-radius: 100%;
-                background: inherit;
-                transition: all 0.85s ease;
-                transform: translate3d(0, 0, 0); // performance / stability
-                will-change: transform; // performance / stability
-                backface-visibility: hidden; // performance / stability
-            }
-            &.hover:before {
-                transition: all var(--duration) var(--spring-easing);
-                transform: translate3d(0, var(--distance), 0);
-                background: var(--hover);
-            }
-            }
+        /******* Middle section CSS Start ******/
+        /* -------- Landing page ------- */
+        .game-section {
+          padding: 60px 50px;
+        }
+        .game-section .owl-stage {
+          margin: 15px 0;
+          display: flex;
+          display: -webkit-flex;
+        }
+        .game-section .item {
+          margin: 0 15px 60px;
+          width: 320px;
+          height: 400px;
+          display: flex;
+          display: -webkit-flex;
+          align-items: flex-end;
+          -webkit-align-items: flex-end;
+          background: #343434 no-repeat center center / cover;
+          border-radius: 16px;
+          overflow: hidden;
+          position: relative;
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+          cursor: pointer;
+        }
+        .game-section .item.active {
+          width: 500px;
+          box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+          -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
+        }
+        .game-section .item:after {
+          content: "";
+          display: block;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+        }
+        .game-section .item-desc {
+          padding: 0 24px 12px;
+          color: #fff;
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          transform: translateY(calc(100% - 54px));
+          -webkit-transform: translateY(calc(100% - 54px));
+          transition: all 0.4s ease-in-out;
+          -webkit-transition: all 0.4s ease-in-out;
+        }
+        .game-section .item.active .item-desc {
+          transform: none;
+          -webkit-transform: none;
+        }
+        .game-section .item-desc p {
+          opacity: 0;
+          -webkit-transform: translateY(32px);
+          transform: translateY(32px);
+          transition: all 0.4s ease-in-out 0.2s;
+          -webkit-transition: all 0.4s ease-in-out 0.2s;
+        }
+        .game-section .item.active .item-desc p {
+          opacity: 1;
+          -webkit-transform: translateY(0);
+          transform: translateY(0);
+        }
+        .game-section .owl-theme.custom-carousel .owl-dots {
+          margin-top: -20px;
+          position: relative;
+          z-index: 5;
+        }
+        /******** Middle section CSS End *******/
 
-            .menu {
-            position: absolute;
-            z-index: 1;
-            background: transparent;
-            text-align: center;
-            // overflow: hidden;
-            }
+        /***** responsive css Start ******/
 
-            .menu li {
-            background: transparent;
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            transition: all 0.85s ease;
-            height: calc(var(--size) * 2);
+        @media (min-width: 992px) and (max-width: 1199px) {
+          h2 {
+            margin-bottom: 32px;
+          }
+          h3 {
+            margin: 0 0 8px;
+            font-size: 24px;
+            line-height: 32px;
+          }
 
-            &:hover {
-                transition: all calc( var(--duration) - 0.2s ) var(--spring-easing);
-                transform: translate3d(0, var(--distance), 0);
-                color: white;
-            }
+          /* -------- Landing page ------- */
+          .game-section {
+            padding: 50px 30px;
+          }
+          .game-section .item {
+            margin: 0 12px 60px;
+            width: 260px;
+            height: 360px;
+          }
+          .game-section .item.active {
+            width: 400px;
+          }
+          .game-section .item-desc {
+            transform: translateY(calc(100% - 46px));
+            -webkit-transform: translateY(calc(100% - 46px));
+          }
+        }
 
-            a {
-                display: grid;
-                grid-template-rows: 1fr 1fr;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                color: rgba(0, 0, 0, 0.6);
-                transition: color 0.5s ease;
-                width: 100%;
-                height: 100%;
-            }
-            &:hover a {
-                color: rgba(0, 0, 0, 0.9);
-            }
-            }
+        @media (min-width: 768px) and (max-width: 991px) {
+          h2 {
+            margin-bottom: 32px;
+          }
+          h3 {
+            margin: 0 0 8px;
+            font-size: 24px;
+            line-height: 32px;
+          }
+          .line-title {
+            width: 330px;
+          }
 
-            nav {
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            background: var(--default);
-            position: fixed;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
-            }
+          /* -------- Landing page ------- */
+          .game-section {
+            padding: 50px 30px 40px;
+          }
+          .game-section .item {
+            margin: 0 12px 60px;
+            width: 240px;
+            height: 330px;
+          }
+          .game-section .item.active {
+            width: 360px;
+          }
+          .game-section .item-desc {
+            transform: translateY(calc(100% - 42px));
+            -webkit-transform: translateY(calc(100% - 42px));
+          }
+        }
 
+        @media (max-width: 767px) {
+          body {
+            font-size: 14px;
+          }
+          h2 {
+            margin-bottom: 20px;
+          }
+          h3 {
+            margin: 0 0 8px;
+            font-size: 19px;
+            line-height: 24px;
+          }
+          .line-title {
+            width: 250px;
+          }
 
-
-
-
-
-
-
-
-
-
-
-            /* unimportant styles */
-
-            body {
-            color: white;
-            background: #333844;
-            padding: 20px 0;
-            font-family: "Heebo", sans-serif;
-            display: flex;
-            justify-content: center;
-            text-align: center;
-            }
-
-            p {
-            max-width: 70ch;
-            font-weight: 200;
-            }
-
-            ul {
-            list-style: none;
-            margin: 0;
-            }
-
-            svg {
-            width: calc(var(--size)/3);
-            height: calc(var(--size)/3);
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-            }
-
+          /* -------- Landing page ------- */
+          .game-section {
+            padding: 30px 15px 20px;
+          }
+          .game-section .item {
+            margin: 0 10px 40px;
+            width: 200px;
+            height: 280px;
+          }
+          .game-section .item.active {
+            width: 270px;
+            box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+            -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
+          }
+          .game-section .item-desc {
+            padding: 0 14px 5px;
+            transform: translateY(calc(100% - 42px));
+            -webkit-transform: translateY(calc(100% - 42px));
+          }
+        }
 
         </style>
         
-    </head>
+
     <body>
-        <main id=app>
-  
-            <h1>Bem vindos a minha Spring!!!</h1>
-            <p>No vasto e crescente mundo dos jogos, pode ser difícil manter o controle de todos os lançamentos, plataformas e gêneros. Nosso site foi criado com o objetivo de facilitar essa jornada. Aqui, você pode organizar e listar seus jogos favoritos de maneira clara e eficiente, categorizando-os por plataformas e gêneros. Isso permite que você descubra novos títulos de forma mais simples e rápida, garantindo que sempre tenha algo novo e interessante para jogar. A organização de jogos é essencial não só para jogadores casuais, mas também para aqueles que desejam explorar diferentes gêneros ou aproveitar ao máximo suas plataformas. Nossa plataforma torna essa experiência mais fluida, ajudando a encontrar o próximo jogo perfeito ou revisitar um clássico.</p>
-            
-            <nav>
-              <!-- gooey menu background -->
-              <aside class="goo">
-                <ul>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </aside>
-              <!-- actual menu, cannot be inside gooey due to svg filter -->
-              <ul class="menu">
-                <li><a href="#">
-                  <svg viewBox="0 0 24 24"><use href="home" /></svg></a></li>
-                <li><a href="#">
-                  <svg viewBox="0 0 24 24"><use href="categoria/list" /></svg></a></li>
-                <li><a href="#">
-                  <svg viewBox="0 0 24 24"><use href="plataforma/list" /></svg></a></li>
-                <li><a href="#">
-                  <svg viewBox="0 0 24 24"><use href="jogo/list" /></svg></a></li>
-              </ul>
-            </nav>
-            
-          </main>
-          
-          
-          <svg viewBox="0 0 24 24">
-            
-            <!-- filter to make gooey effect -->
-            <filter id="schlurp">
-              <feGaussianBlur id="SourceGraphic" stdDeviation="10" />
-              <feColorMatrix values="
-                 1 0 0 0 0
-                 0 1 0 0 0
-                 0 0 1 0 0 
-                 0 0 0 20 -10
-              " />
-            </filter>
-            
-            <defs>
-              <g id="home">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                <polyline points="9 22 9 12 15 12 15 22" />
-              </g>
-              <g id="heart">
-                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-              </g>
-              <g id="bag">
-                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <path d="M16 10a4 4 0 0 1-8 0" />
-              </g>
-              <g id="settings">
-                <line x1="4" y1="21" x2="4" y2="14" />
-                <line x1="4" y1="10" x2="4" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="12" />
-                <line x1="12" y1="8" x2="12" y2="3" />
-                <line x1="20" y1="21" x2="20" y2="16" />
-                <line x1="20" y1="12" x2="20" y2="3" />
-                <line x1="1" y1="14" x2="7" y2="14" />
-                <line x1="9" y1="8" x2="15" y2="8" />
-                <line x1="17" y1="16" x2="23" y2="16" />
-              </g>
-            </defs>
-            
-          </svg>
+      <section class="game-section">
+        <h2 class="line-title">trending games</h2>
+        <div class="owl-carousel custom-carousel owl-theme">
+          <div class="item active" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/dota-2.jpg);">
+            <div class="item-desc">
+              <h3>Dota 2</h3>
+              <p>Dota 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+                Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+            </div>
+          </div>
+          <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/winter-3.jpg);">
+            <div class="item-desc">
+              <h3>The Witcher 3</h3>
+              <p>The Witcher 3 is a multiplayer online battle arena by Valve. The game is a sequel to Defense
+                of the Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+            </div>
+          </div>
+          <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/rdr-2.jpg);">
+            <div class="item-desc">
+              <h3>RDR 2</h3>
+              <p>RDR 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+                Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+            </div>
+          </div>
+          <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/pubg.jpg);">
+            <div class="item-desc">
+              <h3>PUBG Mobile</h3>
+              <p>PUBG 2 is a multiplayer online battle arena by Valve. The game is a sequel to Defense of the
+                Ancients, which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+            </div>
+          </div>
+          <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/fortnite.jpg);">
+            <div class="item-desc">
+              <h3>Fortnite</h3>
+              <p>Battle royale where 100 players fight to be the last person standing. which was a community-created mod
+                for Blizzard Entertainment's Warcraft III.</p>
+            </div>
+          </div>
+          <div class="item" style="background-image: url(https://www.yudiz.com/codepen/expandable-animated-card-slider/far-cry-5.jpg);">
+            <div class="item-desc">
+              <h3>Far Cry 5</h3>
+              <p>Far Cry 5 is a 2018 first-person shooter game developed by Ubisoft.
+                which was a community-created mod for Blizzard Entertainment's Warcraft III.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>       
 
     </body>
+
+    <script>
+      $(".custom-carousel").owlCarousel({
+        autoWidth: true,
+        loop: true
+      });
+      $(document).ready(function () {
+        $(".custom-carousel.item").click(function () {
+          $(".custom-carousel.item").not($(this)).removeClass("active");
+          $(this).toggleClass("active");
+        });
+      });
+
+
+    </script>
+
+
 </html>
 
