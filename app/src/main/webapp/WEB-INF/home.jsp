@@ -4,172 +4,138 @@
     <head>
         <meta charset="UTF-8" />
         <title>Home</title>
-    
-      </head>
+    </head>
         <style>
-          @import url('https://fonts.googleapis.com/css?family=Roboto');
+          @import url(https://fonts.googleapis.com/css?family=Fredoka+One);
 
-          body {
-            background: #171a21;
-            color: #c6d4df;
-            font-family: 'Roboto', sans-serif;
+          * {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+          }
+
+          img {
+            display: block;
           }
 
           a {
-            color: inherit;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            -webkit-transition: all 0.25s ease;
+            -moz-transition: all 0.25s ease;
+            -ms-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+          }
+
+          a:hover {
+            color: rgb(255, 217, 0);
+            padding-left: 5px;
+          }
+
+          body {
+            background-color: rgb(255, 217, 0);
           }
 
           .container {
-            margin: 0 auto;
+            display: table;
+            margin: 50px auto auto auto;
+            overflow: hidden;
+            -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+            -moz-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+          }
+
+          .container:hover .image-caption {
+            bottom: -8px;
+            opacity: 0;
+          }
+
+          .container:hover .image-menu {
+            /*transform: translate(0px, 432px);
+            /*-webkit-transform: translate(0px, 432px);
+            -moz-transform: translate(0px, 432px);
+            -o-transform: translate(0px, 432px);
+            -ms-transform: translate(0px, 432px);*/
+            top: 0;
+          }
+
+          .image {
+            position: relative;
+          }
+
+          .image-caption {
+            position: absolute;
+            bottom: 6px;
+            left: 10px;
+            color: rgb(0, 200, 300);
+            font-family: "Fredoka One", cursive;
+            font-size: 30px;
+            text-transform: uppercase;
+          }
+
+          .image-menu {
+            position: absolute;
+            top: -432px;
+            left: 0;
+            height: 100%;
             width: 100%;
-            @media ( min-width: 768px ) { width: 680px; }
-            @media ( min-width: 1024px ) { width: 992px; }
-            @media ( min-width: 1920px ) { width: 1200px; }
+            background-color: rgb(0, 178, 208);
+            font-family: "Fredoka One", cursive;
+            padding: 20px;
           }
 
-          .menu, 
-          .games {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+          .image-menu h2 {
+            margin: 0;
+            color: rgb(255, 217, 0);
+            font-size: 36px;
+            line-height: 40px;
+            text-transform: uppercase;
           }
 
-          .menu {
-            justify-content: space-between;
-            align-items: center;
-            #logo {
-              margin: 20px auto 20px 0;
-            }
-            a {
-              font-size: 14px;
-              margin-right: 10px;
-              text-decoration: none;
-              text-transform: uppercase;
-            }
+          .image-menu ul {
+            list-style-type: none;
+            padding: 0;
           }
 
-          .game {
-            background-color: rgba(64, 81, 99, 0.9);
-            padding: 16px;
-            margin: 0 5px 5px 0;
-            display: flex;
-            flex-direction: row;
-            width: calc( 50% - 38px ); 
-
-            .cover {
-              margin-right: 19px;
-            }
-
-            .title {
-              color: #fff;
-              font-size: 22px;
-              font-weight: 400;
-              margin-bottom: 15px;
-            }
-            
-            li {
-              display: inline-block;
-              font-size: 12px;
-              line-height: 2;
-              a {
-                margin-right: 3px;
-                padding: 2px 5px;
-                border: 1px solid rgba(255,255,255,0.2);
-                color: #8f98a0;
-                border-radius: 3px;
-                text-decoration: none;
-                &:hover {
-                  background: rgba(255,255,255,0.1);
-                }
-              }
-            }
-
+          .image-menu li {
+            font-size: 22px;
           }
+
+          .transition {
+            -webkit-transition: all 0.25s ease;
+            -moz-transition: all 0.25s ease;
+            -ms-transition: all 0.25s ease;
+            -o-transition: all 0.25s ease;
+            transition: all 0.25s ease;
+            -webkit-backface-visibility: hidden;
+          }
+
+
         </style>
         
 
     <body>
-      <section id="header">
+      <body>
         <div class="container">
-          <div class="menu">
-            <a id="logo" href="https://store.steampowered.com/">
-              <img src="https://steamstore-a.akamaihd.net/public/shared/images/header/globalheader_logo.png" />
-            </a>
-            <a	href="https://google.com/">Google</a>
+          <div class="image">
+            <span class="image-caption transition">Bem vindos a Spring!!</span>
+            <span class="image-menu transition">
+              <h2>Menu</h2>
+              <ul>
+                <li><a href="categoria/list">Categorias</a></li>
+                <li><a href="plataforma/list">Plataformas</a></li>
+                <li><a href="jogo/list">Jogos</a></li>
+              </ul>
+            </span>
+            <img src="https://img.freepik.com/fotos-premium/close-up-de-uma-pessoa-segurando-um-controlador-de-videogame-em-uma-sala-iluminada-com-luzes-rosas-e-azuis_957244-10666.jpg?size=626&ext=jpg&ga=GA1.1.1916936386.1727454812&semt=ais_hybrid" />
           </div>
         </div>
-    </section>
-    
-    <section class="body">
-      <div class="container">
-        <div class="games">
-          
-          <div class="game game-subnautica">
-            <div class="cover">
-              <a href="https://store.steampowered.com/app/264710/Subnautica/">
-                <img src="https://steamcdn-a.akamaihd.net/steam/apps/264710/header_292x136.jpg" />
-              </a>
-            </div>
-            <div class="copy">
-              <h2 class="title">Categoria</h2>
-              <ul>
-                <li>
-                  <a href="categoria/insert">Categorias</a>
-                </li>
-                <li>
-                  <a href="categoria/list">Lista de Categorias</a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/subnautica/">Subnautica Subreddit</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="game game-thelongdark">
-            <div class="cover">
-              <a href="https://store.steampowered.com/app/305620/The_Long_Dark/">
-                <img src="https://steamcdn-a.akamaihd.net/steam/apps/305620/header_292x136.jpg" />
-              </a>
-            </div>
-            <div class="copy">
-              <h2 class="title">Plataforma</h2>
-              <ul>
-                <li>
-                  <a href="https://thelongdark.fandom.com/wiki/The_Long_Dark_Wiki/">The Long Dark Wiki</a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/thelongdark/">TLD Subreddit</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div class="game game-nomanssky">
-            <div class="cover">
-              <a href="https://store.steampowered.com/app/275850/No_Mans_Sky/">
-                <img src="https://steamcdn-a.akamaihd.net/steam/apps/275850/header_292x136.jpg" />
-              </a>
-            </div>
-            <div class="copy">
-              <h2 class="title">Jogo</h2>
-              <ul>
-                <li>
-                  <a href="https://nomanssky.gamepedia.com/">No Man's Sky Wiki</a>
-                </li>
-                <li>
-                  <a href="https://www.reddit.com/r/NoMansSkyTheGame/">No Man's Sky Subreddit</a>
-                </li>
-                <li>
-                  <a href="https://www.google.com/search?q=no+man%27s+sky">Google: "no man's sky"</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-    
-        </div>
-      </div>
-    </section>
+      </body>
     </body>
+
+    <script>
+
+    </script>
 </html>
 

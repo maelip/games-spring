@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Remover Jogo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-s0JyaWYBBaP5JDhLddkzt9MbEHN3IPipzdhCFJTXSU+HjIvGCP7CGp6Bu6I2bBzA" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
