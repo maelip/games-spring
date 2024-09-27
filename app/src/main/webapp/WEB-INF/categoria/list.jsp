@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8" />
         <title>Categorias</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-s0JyaWYBBaP5JDhLddkzt9MbEHN3IPipzdhCFJTXSU+HjIvGCP7CGp6Bu6I2bBzA" crossorigin="anonymous">
     </head>
     <body>
         <div class="container">

@@ -111,13 +111,13 @@
               </a>
             </div>
             <div class="copy">
-              <h2 class="title">Subnautica</h2>
+              <h2 class="title">Categoria</h2>
               <ul>
                 <li>
-                  <a href="http://subnauticamap.io/">Subnautica Map</a>
+                  <a href="categoria/insert">Categorias</a>
                 </li>
                 <li>
-                  <a href="http://subnautica.wikia.com/">Subnautica Wikia</a>
+                  <a href="categoria/list">Lista de Categorias</a>
                 </li>
                 <li>
                   <a href="https://www.reddit.com/r/subnautica/">Subnautica Subreddit</a>
@@ -133,7 +133,7 @@
               </a>
             </div>
             <div class="copy">
-              <h2 class="title">The Long Dark</h2>
+              <h2 class="title">Plataforma</h2>
               <ul>
                 <li>
                   <a href="https://thelongdark.fandom.com/wiki/The_Long_Dark_Wiki/">The Long Dark Wiki</a>
@@ -152,7 +152,7 @@
               </a>
             </div>
             <div class="copy">
-              <h2 class="title">No Man's Sky</h2>
+              <h2 class="title">Jogo</h2>
               <ul>
                 <li>
                   <a href="https://nomanssky.gamepedia.com/">No Man's Sky Wiki</a>
